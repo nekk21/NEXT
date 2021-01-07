@@ -3,12 +3,21 @@ import { Provider } from 'react-redux'
 import React from 'react'
 import { createWrapper } from 'next-redux-wrapper'
 import store from '../store/store'
+import NextNprogress from 'nextjs-progressbar'
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<Provider store={store}>
-			<Component {...pageProps} />
-		</Provider>
+		<>
+			<NextNprogress
+				color='red'
+				startPosition={0.3}
+				stopDelayMs={200}
+				height={3}
+			/>
+			<Provider store={store}>
+				<Component {...pageProps} />
+			</Provider>
+		</>
 	)
 }
 const makeStore = () => store
