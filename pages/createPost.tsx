@@ -7,7 +7,7 @@ function createPost() {
 	const router = useRouter()
 	const dispatch = useDispatch()
 
-	const submit = formData => {
+	const submit = (formData: any) => {
 		dispatch(createPostFetch(formData))
 		router.push('/')
 	}
